@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/confetti.css">
+  <style>
+    #header {
+      background-color: #350909;
+      border-radius: 10px;
+      padding: 5px;
+    }
+
+    .nav {
+      padding-right: 20px;
+    }
+
+    .nav ul li{
+      display:inline;
+      padding:0 10px
+    }
+
+    h1 {
+      text-align: center;
+      color: black;
+      margin: 8px;
+    }
+    #seccion {
+      display: flex;
+      flex-direction: row;
+      flex-wrap:wrap
+    }
+
+    .barra {
+      padding: 10px;
+      margin:5px;
+      background: rgb(37, 2, 2);
+      flex:3;
+      border-radius:10px;
+      display:flex;
+      flex-flow:column;
+      align-items:center;
+    }
+
+    .contenido {
+      padding: 10px;
+      border-radius:10px;
+      background: rgb(202, 59, 59);
+      margin:5px;
+      flex:1 150px;
+    }
+
+    .subcontenido2 {
+      display:flex;
+      flex-direction:row;
+      flex-wrap:wrap;
+      justify-content:center;
+    }
+
+    #resultado {
+      display:flex;
+      flex-direction:column;
+      flex-wrap:wrap;
+      align-items: center;
+    }
+    
+    #footer {
+      background-color: white;
+      height: 100%;
+      text-align: center;
+      padding-top: 10px;
+      border-radius: 10px;
+      display:flex;
+      flex-flow:row;
+    }
+    .pie {
+      font-size: 25px;
+      font-weight: bold;
+    }
+
+    #galeria{
+      display:flex;
+      flex-direction:row;
+      flex-wrap:wrap; 
+      height:100px;
+    }
+
+    .proyecto{
+      
+      height:150px;
+      max-width:150px;
+      background-color:rgb(255, 255, 255);
+      border-radius:10px;
+      margin:10px;
+      flex:1 100px;
+    }
+
+    .barra a {
+      display:block;
+    }
+    #imagen-interactiva {
+      position: relative;
+      width: 300px;
+      height: 600px;
+      background-image: url('imagen/phone.jpg');
+      background-size: cover;
+      border: 2px solid #000;
+      border-radius: 10px;
+    }
+
+    #hotspot1 {
+      position: absolute;
+      top: 90px;
+      left: 20px;
+      width: 50px;
+      height: 40px;
+      background-color: #0015ff80;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    #hotspot2 {
+      position: absolute;
+      top: 180px;
+      left: 20px;
+      width: 50px;
+      height: 40px;
+      background-color: rgba(0, 21, 255, 0.5);
+      border-radius: 50%;
+      cursor: pointer;
+    }
+     #hotspot3 {
+      position: absolute;
+      top: 260px;
+      left: 20px;
+      width: 50px;
+      height: 40px;
+      background-color: rgba(0, 21, 255, 0.5);
+      border-radius: 50%;
+      cursor: pointer;
+    }
+     #hotspot4 {
+      position: absolute;
+      top: 320px;
+      left: 20px;
+      width: 50px;
+      height: 40px;
+      background-color: rgba(0, 21, 255, 0.5);
+      border-radius: 50%;
+      cursor: pointer;
+    }
+     #hotspot5 {
+      position: absolute;
+      top: 380px;
+      left: 20px;
+      width: 50px;
+      height: 40px;
+      background-color: rgba(0, 21, 255, 0.5);
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    .text-hotspot {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-weight: bold;
+    }
+
+    #instrucciones {
+      flex:1;
+      cursor: pointer;
+    }
+
+    #prueba {
+      flex:1;
+      cursor:pointer;
+    }
+
+    .texto-rojo{
+            font-size:40px;
+            font-weight: bold;
+            color:red;
+    }
+    .color{
+      font-size: 20px;
+      font-weight: bold;
+      background-color: #e6dcdc;
+      color: rgb(26, 4, 4);
+    }
+  </style>
+</head>
+<body>
+  <div id="header">
+    <div class="nav" style="text-align:center;">
+      <h3>Bienvenido a "Conociendo The Black Phone"</h3>
+    </div>
+  </div>
+  <div id="seccion">
+    <div class="barra">
+        <div id="imagen-interactiva">
+          <div id="hotspot1"><span class="text-hotspot">origen</span></div>
+          <div id="hotspot2"><span class="text-hotspot">trama</span></div>
+          <div id="hotspot3"><span class="text-hotspot">personajes</span></div>
+          <div id="hotspot4"><span class="text-hotspot">ubicacion</span></div>
+          <div id="hotspot5"><span class="text-hotspot">estrenos</span></div>
+
+        </div>
+    </div>
+    <div class="contenido">
+      <div class="subcontenido1">
+        <h2 id="titulo-info">Instrucciones</h2>
+        <p id="texto-info">Haz click en cada uno de los puntos de la imagen para ver su descripción. Una vez visualizado el interactivo, realiza el test de conocimientos.</p>
+      </div>
+      <div class="subcontenido2">
+        <div class="proyecto">
+          <img id="imagen-info" src="imagen/intru.png" alt="Imagen info" style="width:100%; height:100%; border-radius:10px;">
+        </div>
+      </div>
+      <div id="resultado" class="invisible">
+        <h2>Tu resultado:</h2>
+        <span id="calif" class="texto-rojo">0/0</span>
+        <img id="imagen-resultado" width="200px" src="imagen/img3.jpg" />
+        <br>
+        <a href="formulario.php"><span class="color">ingresar registro</span></a>
+        <br>
+        <a href="listado.php"><span class="color">Ver libro de visitas</span></a>
+        <br>
+
+      </div>      
+    </div>
+  </div>
+  <div id="footer">
+    <div id="instrucciones"><img width="100px" src="imagen/intru.png" /></div>
+    <div id="prueba"><img width="100px" src="imagen/cerebro.jpg" /></div>
+  </div>
+  <script type="text/javascript">
+    let puntaje = 0;
+    let pregunta1 = "";
+
+    document.getElementById('hotspot1').onclick = function() {
+      document.getElementById('titulo-info').textContent = 'Origen';
+      document.getElementById('texto-info').textContent = ' La película "The Black Phone" se basa en el cuento corto de 2004 del mismo nombre, escrito por Joe Hill. Fue dirigida por Scott Derrickson, quien adaptó la historia para la pantalla junto a C. Robert Cargill. La película toma como inspiración elementos del caso real del secuestrador Kenneth Parnell, quien secuestró a Steven Stayner y luego al pequeño Timothy White. ';
+      document.getElementById('imagen-info').setAttribute('src', 'imagen/img1.jpg');    
+    };
+
+    document.getElementById('hotspot2').onclick = function() {
+      document.getElementById('titulo-info').textContent = 'Trama';
+      document.getElementById('texto-info').textContent = 'La trama de The Black Phone gira en torno a Finney Shaw, un niño de 13 años secuestrado por un asesino en serie enmascarado conocido como "El Agarrador" y encerrado en un sótano a prueba de sonido. Desde ese lugar, Finney comienza a recibir llamadas telefónicas en un teléfono negro desconectado, a través del cual puede comunicarse con los fantasmas de las víctimas anteriores del asesino, quienes intentan guiarlo para que pueda escapar. ';
+      document.getElementById('imagen-info').setAttribute('src', 'imagen/trama.jpg');
+    };
+     document.getElementById('hotspot3').onclick = function() {
+      document.getElementById('titulo-info').textContent = 'Personajes';
+      document.getElementById('texto-info').textContent = "En The Black Phone, los personajes principales incluyen a Finney Shaw, un niño tímido y reservado que es secuestrado por el villano, conocido como The Grabber, un hombre misterioso interpretado por Ethan Hawke. Finney tiene una hermana menor, Gwen Shaw, quien posee habilidades psíquicas que le permiten recibir visiones y que juega un papel clave en la búsqueda de su hermano. Robin Arellano, un compañero de Finney, también es secuestrado por el Grabber antes que él, y su muerte se convierte en una pista importante en la trama. Además, Vance Hopper, otro joven víctima del Grabber, se comunica con Finney en el otro mundo para darle consejos sobre cómo escapar. También están Bruce, otro niño secuestrado que ayuda a Finney desde el más allá a través del teléfono, y Max Shaw, el padre de los niños, quien es un alcohólico y tiene problemas emocionales. Todos estos personajes contribuyen a la atmósfera de tensión y horror de la película, mientras Finney intenta encontrar una forma de escapar del secuestrador.";
+      document.getElementById('imagen-info').setAttribute('src', 'imagen/personajes.jpg');
+     };
+     document.getElementById('hotspot4').onclick = function() {
+      document.getElementById('titulo-info').textContent = 'Ubicacion';
+      document.getElementById('texto-info').textContent = "La trama de The Black Phone sucede en un suburbio ficticio en los Estados Unidos durante la década de 1970. Aunque no se menciona un nombre específico para la ciudad, está ambientada en una localidad que refleja las pequeñas comunidades urbanas y rurales de esa época, con calles residenciales, parques y tiendas locales.El lugar tiene una sensación de tranquilidad y normalidad, que se ve alterada por los secuestros de niños que sacuden la ciudad. En este escenario, Finney Shaw y su hermana Gwen viven con su padre, quien tiene problemas con el alcohol y la violencia doméstica, lo que añade una capa de tensión a la vida cotidiana de los personajes";
+      document.getElementById('imagen-info').setAttribute('src', 'imagen/ubicacion.jpg');
+    };
+     document.getElementById('hotspot5').onclick = function() {
+      document.getElementById('titulo-info').textContent = 'Estrenos';
+      document.getElementById('texto-info').textContent = "Black Phone 2 es una película estadounidense de terror sobrenatural de 2025 dirigida por Scott Derrickson a partir de un guion que coescribió con C. Robert Cargill y producida por Jason Blum. Es la secuela de The Black Phone.";
+            document.getElementById('imagen-info').setAttribute('src', 'imagen/estrenos.jpg');
+    };
+
+    document.getElementById('instrucciones').onclick = function(){
+      document.getElementById('titulo-info').textContent = 'Instrucciones';
+      document.getElementById('texto-info').textContent = 'Haz click en cada uno de los puntos de la imagen para ver su descripción. Una vez visualizado el interactivo, realiza el test de conocimientos.';
+      document.getElementById('imagen-info').setAttribute('src', 'imagen/img5.jpg');
+    };
+    
+
+    document.getElementById('prueba').onclick = function(){
+      alert("Bienvenidos a la prueba de conocimientos");
+      alert("Responde correctamente todas las preguntas para ganar");
+
+      if(pregunta1 = prompt("¿Cómo logra escapar Finney de su captor?")){
+            // Se eliminan espacios 
+            pregunta1 = pregunta1.trim();
+            
+        }
+        if (pregunta1.toLowerCase() === "mata al raptor") {
+            alert("¡Correcto!  mata al raptor con un cable de telefono");
+            puntaje += 1;
+        } else {
+            alert("Incorrecto. La respuesta correcta es: mata al raptor con un cable de telefono .");
+        }
+        if(pregunta2 = prompt("¿Quién es el asesino de niños y cuál es su apodo?")){
+            // Se eliminan espacios 
+            pregunta2 = pregunta2.trim();
+            
+        }
+        if (pregunta2.toLowerCase() === "El Raptor") {
+            alert("¡Correcto!  (The Grabber), aunque su nombre real es Albert Shaw");
+            puntaje += 1;
+        } else {
+            alert("Incorrecto. La respuesta correcta es: (The Grabber), aunque su nombre real es Albert Shaw.");
+        }
+         if(pregunta3 = prompt("¿Qué papel juega el padre de Finney en la historia?")){
+            // Se eliminan espacios 
+            pregunta3 = pregunta3.trim();
+            
+        }
+        if (pregunta3.toLowerCase() === "Un papà violento") {
+            alert("¡Correcto!  es un padre alcohólico y abusivo cuya historia trágica se entrelaza con la de su familia");
+            puntaje += 1;
+        } else {
+            alert("Incorrecto. La respuesta correcta es:  es un padre alcohólico y abusivo cuya historia trágica se entrelaza con la de su familia");
+        }
+        if(pregunta4 = prompt("¿Es la película una historia real?")){
+            // Se eliminan espacios 
+            pregunta4 = pregunta4.trim();
+            
+        }
+        if (pregunta4.toLowerCase() === "si lo es") {
+            alert("¡Correcto!  si lo es");
+            puntaje += 1;
+        } else {
+            alert("Incorrecto. La respuesta correcta es:  si lo es");
+        }
+         if(pregunta5 = prompt("¿Cuáles son las principales diferencias entre el cuento de Joe Hill y la película?")){
+            // Se eliminan espacios 
+            pregunta5 = pregunta5.trim();
+            
+        }
+        if (pregunta5.toLowerCase() === "la expansión de la trama") {
+            alert("¡Correcto! la expansión de la trama");
+            puntaje += 1;
+        } else {
+            alert("Incorrecto. La respuesta correcta es:  la expansión de la trama");
+        }
+         if(pregunta6 = prompt("¿Por qué se llama El Teléfono Negro?")){
+            // Se eliminan espacios 
+            pregunta6 = pregunta6.trim();
+            
+        }
+        if (pregunta6.toLowerCase() === "conexion  ") {
+            alert("¡Correcto!   donde el protagonista secuestrado, Finney, recibe llamadas de las víctimas anteriores del asesino a través de un viejo teléfono negro desconectado en el sótano donde lo tienen prisionero");
+            puntaje += 1;
+        } else {
+            alert("Incorrecto. La respuesta correcta es:  conexion ");
+        }
+         if(pregunta7 = prompt("¿Cuál es la inspiración de la película?")){
+            // Se eliminan espacios 
+            pregunta7 = pregunta7.trim();
+            
+        }
+        if (pregunta7.toLowerCase() === "cuento ") {
+            alert("¡Correcto!   del escritor Joe Hill y la infancia del director, Scott Derrickson.");
+            puntaje += 1;
+        } else {
+            alert("Incorrecto. La respuesta correcta es: cuento");
+        }
+         if(pregunta8 = prompt("¿Qué simboliza la máscara de The Grabber")){
+            // Se eliminan espacios 
+            pregunta8 = pregunta8.trim();
+            
+        }
+        if (pregunta8.toLowerCase() === "doble personalidad") {
+            alert("¡Correcto!  ocultando su identidad y reflejando diferentes estados de ánimo y su naturaleza abusiva");
+            puntaje += 1;
+        } else {
+            alert("Incorrecto. La respuesta correcta es:  doble personalidad");
+        }
+         if(pregunta9 = prompt("¿Por qué Finney es el único que puede oír las llamadas de los fantasmas?")){
+            // Se eliminan espacios 
+            pregunta9 = pregunta9.trim();
+            
+        }
+        if (pregunta9.toLowerCase() === "habilidad") {
+            alert("¡Correcto!   sobrenatural que heredó de su madre.");
+            puntaje += 1;
+        } else {
+            alert("Incorrecto. La respuesta correcta es:  habilidad");
+        }
+         if(pregunta10 = prompt("¿Qué escena de la película te pareció más impactante o memorable y por qué?")){
+            // Se eliminan espacios 
+            pregunta10 = pregunta10.trim();
+            
+        }
+        if (pregunta10.toLowerCase() === "La muerte de Robinh") {
+            alert("¡Correcto!  por que fue el unhico asesinato fuera de la ubicacion y estuvo con su amigo hasta su ultimo adios");
+            puntaje += 1;
+        } else {
+            alert("Incorrecto. La respuesta correcta es:  La muerte de Robin");
+        }
+
+        if(puntaje >= 1) {
+            alert("¡Felicidades! Has respondido correctamente todas las preguntas.");
+            //document.getElementById("fiesta").setAttribute("class", "visible");
+            document.getElementById("calif").textContent = puntaje + "/10";
+            document.getElementById("resultado").setAttribute("class", "visible");
+            
+        } else {
+            alert("Has respondido " + puntaje + " preguntas correctamente. ¡Sigue intentando!");
+
+        }
+    };
+  </script>
+</body>
+</html>
